@@ -1,6 +1,8 @@
 # sa stii sa instalezi python package
 import discord
 
+token = open(".token", "r")
+
 client = discord.Client()
 
 @client.event
@@ -19,6 +21,6 @@ async def on_message(message):
         print(message.author.discriminator)
         await  message.channel.send("ai fost logat lol iti pic netu")
 
-client.run("AI VREA TU")
+client.run(token.readline())
 
 
